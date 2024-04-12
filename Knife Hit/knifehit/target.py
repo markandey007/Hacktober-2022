@@ -77,23 +77,23 @@ class Target(arcade.Sprite):
         # the sprite rotation. Change this, and the sprite rotates.
 
         if self.rotation_mode == RotationMode.FAST_AND_SLOW:
-            if self.rotation_state is "Decreasing":
+            if self.rotation_state == "Decreasing":
                 self.TARGET_ROTATION_SPEED -= 0.005
-            if self.rotation_state is "Decreasing" and self.TARGET_ROTATION_SPEED <= 0:
+            if self.rotation_state == "Decreasing" and self.TARGET_ROTATION_SPEED <= 0:
                 self.rotation_state = "Increasing"
-            if self.rotation_state is "Increasing":
+            if self.rotation_state == "Increasing":
                 self.TARGET_ROTATION_SPEED += 0.01
-            if self.rotation_state is "Increasing" and self.TARGET_ROTATION_SPEED >= 3:
+            if self.rotation_state == "Increasing" and self.TARGET_ROTATION_SPEED >= 3:
                 self.rotation_state = "Decreasing"
         
         if self.rotation_mode == RotationMode.BACK_AND_FORTH:
-            if self.rotation_state is "Back":
+            if self.rotation_state == "Back":
                 self.TARGET_ROTATION_SPEED -= 0.01
-            if self.rotation_state is "Back" and self.TARGET_ROTATION_SPEED <= -4:
+            if self.rotation_state == "Back" and self.TARGET_ROTATION_SPEED <= -4:
                 self.rotation_state = "Forth"
-            if self.rotation_state is "Forth":
+            if self.rotation_state == "Forth":
                 self.TARGET_ROTATION_SPEED += 0.05
-            if self.rotation_state is "Forth" and self.TARGET_ROTATION_SPEED >= 4:
+            if self.rotation_state == "Forth" and self.TARGET_ROTATION_SPEED >= 4:
                 self.rotation_state = "Back"
 
 
