@@ -10,6 +10,7 @@ from sklearn.svm import SVC
 import os
 from threading import Thread
 import time
+import math
 
 # os.chdir("D:\COLLEGE CLASSES\project\em2")
 # os.chdir("D:\\COLLEGE CLASSES\\temp")
@@ -304,9 +305,9 @@ class page2_mainpage:
         count = 0
         for item in email_list:
             self.write_email("All emails", item)
-            if res[count] == 0.0:
+            if math.isclose(res[count], 0.0, rel_tol=1e-09, abs_tol=0.0):
                 self.write_email("Ham emails", item)
-            if res[count]==1.0:
+            if math.isclose(res[count], 1.0, rel_tol=1e-09, abs_tol=0.0):
                 self.write_email("Spam emails", item)
             count += 1
         self.replace("All emails")
