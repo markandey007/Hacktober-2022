@@ -1,6 +1,6 @@
 from itertools import cycle
-from random import randrange
 from tkinter import Canvas, Tk, messagebox, font
+import secrets
 
 canvas_width = 800
 canvas_height = 400
@@ -68,7 +68,7 @@ eggs = []
 
 # new egg formation
 def create_egg():
-    x = randrange(10, 740)
+    x = secrets.SystemRandom().randrange(10, 740)
     y = 40
     # egg formation
     new_egg = c.create_oval(x, y, x+egg_width, y+egg_height, fill=next(color_cycle), width=0)

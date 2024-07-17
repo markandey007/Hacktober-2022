@@ -1,9 +1,9 @@
  # Exercise - 5
 from emoji import emojize  # pip install emoji
-import random
 from time import sleep
 import shutil
 from simple_colors import *  # pip install simple_colors
+import secrets
 
 
 def intro():
@@ -38,7 +38,7 @@ def choices():
     """
     global computer_choice, user_choice  # Declaring variables as global to use in function
     options = ["Snake", "Water", "Gun"]  # List of options for computer to choose randomly
-    computer_choice = random.choice(options)  # function to store random choice from list 'options'
+    computer_choice = secrets.choice(options)  # function to store random choice from list 'options'
 
     print("Choose:\t\tS for", emojize(":snake:"),
           "\t\tW for", emojize(":droplet:"),
