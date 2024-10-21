@@ -1,6 +1,6 @@
 import arcade
-import random
 from enum import Enum
+import secrets
 
 class RotationMode(Enum):
     """ Store rotation mode in enum """
@@ -42,7 +42,7 @@ class Boss(arcade.Sprite):
         self.rotation_state = None
 
         if rotation_mode is None:
-            self.rotation_mode = random.choice(list(RotationMode))
+            self.rotation_mode = secrets.choice(list(RotationMode))
         else:
             self.rotation_mode = rotation_mode
 
