@@ -583,9 +583,9 @@ class page4_write_email:
 if __name__ == "__main__":
     for F in email_frame_names:  # opening emails files
         file_name = "file_" + F
-        f = open(file_name, "a+")
-        f.seek(0,0)
-        email_files_dict.update({F: f})
+        with open(file_name, "a+") as f:
+            f.seek(0,0)
+            email_files_dict.update({F: f})
 
     ml = ML_model()
     bs = basic_structure()
