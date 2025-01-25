@@ -1,7 +1,6 @@
 import arcade
 import math
 import os
-import random
 import threading
 import time
 from enum import Enum
@@ -11,6 +10,7 @@ from knife import Knife
 from knifecount import KnifeCount
 from target import Target
 from obstacle import Obstacle
+import secrets
 
 class GameState(Enum):
     """ Store game state in enum """
@@ -100,7 +100,7 @@ class GameManager(arcade.Window):
         self.obstacle_list  = arcade.SpriteList()
 
         # Set up the game score and knife count
-        self.knife_count = random.randrange(self.MIN_KNIFE_COUNT, self.MAX_KNIFE_COUNT)
+        self.knife_count = secrets.SystemRandom().randrange(self.MIN_KNIFE_COUNT, self.MAX_KNIFE_COUNT)
         self.initial_knife_count = self.knife_count
 
         # Set up the knife
@@ -386,13 +386,13 @@ class GameManager(arcade.Window):
         if self.stage > 1:
             # Max obstacle count are inversely proportional to stage knife count
             max_obstacle_count = (self.MAX_KNIFE_COUNT - self.initial_knife_count)+2
-            obstacle_count = random.randrange(0, max_obstacle_count)
+            obstacle_count = secrets.SystemRandom().randrange(0, max_obstacle_count)
             
             current_rotation = []
             for i in range(obstacle_count):
                 while True:
                     # Randomize the obstacle position
-                    initial_rotation_position = random.randrange(0,359)
+                    initial_rotation_position = secrets.SystemRandom().randrange(0,359)
                     if not current_rotation:
                         break
 
