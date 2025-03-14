@@ -1,9 +1,7 @@
 import re
-# just replace the file location in here with you file location
-# also dont forget to add extra backslash where there is \ in the path
-f = open(input("Input file path: "),"r")
-# ex: C:\\Users\\User\\Desktop\\Example.py   or any type of file
-all_text = f.read()
+with open(input("Input file path: "),"r") as f:
+    # ex: C:\\Users\\User\\Desktop\\Example.py   or any type of file
+    all_text = f.read()
 '''
 possible phone number patterns
 possible area codes  => ((\+\d{2,3})|\(\d{2,3}\)|\d{2,3})?
