@@ -1,5 +1,5 @@
-import random
 from enum import IntEnum
+import secrets
 
 class Action(IntEnum):
     Rock = 0
@@ -14,7 +14,7 @@ def get_user_selection():
     return action
 
 def get_computer_selection():
-    selection = random.randint(0, len(Action) - 1)
+    selection = secrets.SystemRandom().randint(0, len(Action) - 1)
     action = Action(selection)
     return action
 

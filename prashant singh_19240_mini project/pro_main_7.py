@@ -4,12 +4,12 @@ from tkinter import filedialog
 from tkinter import messagebox
 import pandas as pd
 import numpy as np
-import random
 import ast
 from sklearn.svm import SVC
 import os
 from threading import Thread
 import time
+import secrets
 
 # os.chdir("D:\COLLEGE CLASSES\project\em2")
 # os.chdir("D:\\COLLEGE CLASSES\\temp")
@@ -391,7 +391,7 @@ class page2_mainpage:
             x = 20;
             y = 23;
             r = 20
-            n = random.randint(0, 12)
+            n = secrets.SystemRandom().randint(0, 12)
 
             c = Canvas(fr, width=45, height=45, bg=bgclr_f2, borderwidth=0,
                        highlightthickness=0)  # generate random colours

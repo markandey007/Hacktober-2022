@@ -9,7 +9,7 @@ import pygame
 from sys import exit
 from pygame.locals import *
 from gameRole import *
-import random
+import secrets
 
 
 # Initialize the game
@@ -90,7 +90,7 @@ while running:
 
     # Generating enemy aircraft
     if enemy_frequency % 50 == 0:
-        enemy1_pos = [random.randint(0, SCREEN_WIDTH - enemy1_rect.width), 0]
+        enemy1_pos = [secrets.SystemRandom().randint(0, SCREEN_WIDTH - enemy1_rect.width), 0]
         enemy1 = Enemy(enemy1_img, enemy1_down_imgs, enemy1_pos)
         enemies1.add(enemy1)
     enemy_frequency += 1
