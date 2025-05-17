@@ -1,11 +1,11 @@
 import tkinter as tk
-import requests
+from security import safe_requests
 
 URL = 'https://api.kanye.rest/'
 
 
 def get_quote():
-    response = requests.get(url=URL)
+    response = safe_requests.get(url=URL)
     response.raise_for_status()
     quote = response.json()['quote']
     canvas.itemconfig(quote_text, text=quote)
